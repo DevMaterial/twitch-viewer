@@ -1,10 +1,4 @@
-// client-side js
-// run by the browser each time your view template is loaded
-
-// by default, you've got jQuery,
-// add other scripts at the bottom of index.html
-
-var users = ['noopkat', 'KingOfLightningGaming', 'ChibiReviews', 'mlg', 'dota2ti', 'tekken'];
+var users = ['noopkat', 'KingOfLightningGaming', 'ChibiReviews', 'mlg', 'dota2ti', 'tekken', 'StreamerHouse'];
 var results = document.querySelector('.results');
 
 var peeps = {};
@@ -30,7 +24,6 @@ users.map(function(user){
    url: "https://api.twitch.tv/kraken/streams/" + user + "?client_id=kt5riua39f8rkrdsny8j1ag9rj3z37",
    async: false,
    success: function(data) {
-     //console.log(data);
      if (data.stream !== null) {
        peeps[user].isStream = [data.stream.stream_type];
      } else {
@@ -42,15 +35,12 @@ users.map(function(user){
    }
  })
  $(results).prepend('<ul>' +
-             "<li><h3><a href=" + peeps[user].link + ">" + peeps[user].name + "</a></h3></li>" +
+             "<li><h3><a href='https://www.twitch.tv/" + peeps[user].name + "' target='_blank'>" + peeps[user].name + "</a></h3></li>" +
              "<li><p>" + peeps[user].bio + "</p></li>" +
              "<li><h4 class='status'>" + peeps[user].isStream + "</h4></li>" +
           '</ul>');
   peeps[user].isStream[0] === 'live' ? document.querySelector('h4').className += " live" : document.querySelector('h4').className += " notLive";
 });
-
-console.log(Object.keys(peeps).length);
-console.log(peeps);
 
 var allUsers = document.querySelector('.all');
 var online = document.querySelector('.online');
@@ -97,7 +87,7 @@ function addNewPeeps() {
  results.innerHTML = '';
  Object.keys(newPeeps).map(function(peep){
    $(results).prepend('<ul>' +
-               "<li><h3><a href=" + peeps[peep].link + ">" + peeps[peep].name + "</a></h3></li>" +
+               "<li><h3><a href='https://www.twitch.tv/" + peeps[user].name + "' target='_blank'/>" + peeps[peep].name + "</a></h3></li>" +
                "<li><p>" + peeps[peep].bio + "</p></li>" +
                "<li><h4 class='status'>" + peeps[peep].isStream + "</h4></li>" +
             '</ul>');
@@ -109,7 +99,7 @@ function addAllPeeps() {
  results.innerHTML = '';
  Object.keys(peeps).map(function(peep){
    $(results).prepend('<ul>' +
-               "<li><h3><a href=" + peeps[peep].link + ">" + peeps[peep].name + "</a></h3></li>" +
+               "<li><h3><a href='https://www.twitch.tv/" + peeps[user].name + "' target='_blank'/>" + peeps[peep].name + "</a></h3></li>" +
                "<li><p>" + peeps[peep].bio + "</p></li>" +
                "<li><h4 class='status'>" + peeps[peep].isStream + "</h4></li>" +
             '</ul>');
