@@ -1,0 +1,151 @@
+/* styles */
+/* called by your view template */
+
+/* You might want to try something fancier: */
+/* less: http://lesscss.org/ */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', arial, sans-serif;
+  margin: 25px;
+  background-color: #C5CAE9;
+}
+
+h1 {
+  font-weight: bold;
+  color: #F5F5F5;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+p {
+  max-width: 600px;
+}
+
+.search {
+  padding-bottom: 25px;
+}
+
+.options {
+  padding-top: 25px;
+  padding: 15px;
+  background-color: #F5F5F5;
+  display: table;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  max-width: 340px;
+  border-radius: 10px;
+}
+
+button {
+  font-size: 16px;
+  display: inline-block;
+  color: #424242;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  background-color: #C5CAE9;
+  border: 1px solid grey;
+  box-shadow: 2px 2px teal;
+  cursor: pointer;
+  margin: 0 auto;
+  margin-left: 5px;
+  margin-right: 5px;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background-color: #FFF9C4;
+  transition: all 0.1s;
+}
+
+button:active {
+  box-shadow: none;
+}
+
+.results {
+  background-color: #F5F5F5;
+  border-radius: 10px;
+  padding: 0 10px;
+  display: table;
+  margin: 0 auto;
+  width: 500px;
+}
+
+.results ul {
+  border-radius: 2px;
+  list-style: none;
+  padding-left: 0;
+  border-bottom: 1px solid teal;
+}
+
+.results ul li {
+  padding-left: 0;
+  padding: 0 10px;
+}
+
+.results h3 {
+  padding-top: 10px;
+}
+
+.results h3 a {
+  text-decoration: none;
+  color: #424242;
+  border-left: 3px solid teal;
+  padding-left: 10px;
+  transition: all 0.2s;
+}
+
+.results h3 a:hover {
+  color: #C5CAE9;
+  transition: all 0.1s;
+}
+
+.results p {
+  color: #424242;
+  letter-spacing: 0.6px;
+  font-style: italic;
+}
+
+.status {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.live {
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+  background-color: #A5D6A7;
+  border: 1px solid teal;
+  box-shadow: 2px 2px teal;
+  opacity: 1;
+  animation: fade 2s infinite;
+  width: 55px;
+}
+
+.notLive {
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+  background-color: #f44336;
+  border: 1px solid teal;
+  box-shadow: 2px 2px teal;
+  width: 90px;
+}
+
+
+
+@keyframes fade {
+  0% { opacity: 1 }
+  50% { opacity: 0 }
+  100% { opacity: 1 }
+}
