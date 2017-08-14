@@ -87,7 +87,7 @@ function addNewPeeps() {
  results.innerHTML = '';
  Object.keys(newPeeps).map(function(peep){
    $(results).prepend('<ul>' +
-               "<li><h3><a href='https://www.twitch.tv/" + peeps[user].name + "' target='_blank'/>" + peeps[peep].name + "</a></h3></li>" +
+               "<li><h3><a href='https://www.twitch.tv/" + peeps[peep].name + "' target='_blank'/>" + peeps[peep].name + "</a></h3></li>" +
                "<li><p>" + peeps[peep].bio + "</p></li>" +
                "<li><h4 class='status'>" + peeps[peep].isStream + "</h4></li>" +
             '</ul>');
@@ -99,7 +99,7 @@ function addAllPeeps() {
  results.innerHTML = '';
  Object.keys(peeps).map(function(peep){
    $(results).prepend('<ul>' +
-               "<li><h3><a href='https://www.twitch.tv/" + peeps[user].name + "' target='_blank'/>" + peeps[peep].name + "</a></h3></li>" +
+               "<li><h3><a href='https://www.twitch.tv/" + peeps[peep].name + "' target='_blank'/>" + peeps[peep].name + "</a></h3></li>" +
                "<li><p>" + peeps[peep].bio + "</p></li>" +
                "<li><h4 class='status'>" + peeps[peep].isStream + "</h4></li>" +
             '</ul>');
